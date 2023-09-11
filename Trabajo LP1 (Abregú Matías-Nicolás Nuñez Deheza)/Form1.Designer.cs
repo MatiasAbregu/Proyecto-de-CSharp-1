@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.TB1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -49,10 +50,12 @@
             // 
             // TB1
             // 
+            this.TB1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.TB1.Location = new System.Drawing.Point(15, 57);
             this.TB1.Name = "TB1";
             this.TB1.Size = new System.Drawing.Size(142, 20);
             this.TB1.TabIndex = 1;
+            this.TB1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB1_KeyPress);
             // 
             // label2
             // 
@@ -69,6 +72,7 @@
             this.TB2.Name = "TB2";
             this.TB2.Size = new System.Drawing.Size(142, 20);
             this.TB2.TabIndex = 5;
+            this.TB2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB2_KeyPress);
             // 
             // label3
             // 
@@ -89,28 +93,30 @@
             // 
             // B1
             // 
+            this.B1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.B1.Location = new System.Drawing.Point(15, 187);
             this.B1.Name = "B1";
             this.B1.Size = new System.Drawing.Size(75, 23);
             this.B1.TabIndex = 7;
             this.B1.Text = "Guardar";
-            this.B1.UseVisualStyleBackColor = true;
+            this.B1.UseVisualStyleBackColor = false;
             this.B1.Click += new System.EventHandler(this.B1_Click);
             // 
             // TB3
             // 
-            this.TB3.Location = new System.Drawing.Point(205, 40);
+            this.TB3.Location = new System.Drawing.Point(186, 40);
             this.TB3.Multiline = true;
             this.TB3.Name = "TB3";
             this.TB3.ReadOnly = true;
             this.TB3.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.TB3.Size = new System.Drawing.Size(205, 195);
+            this.TB3.Size = new System.Drawing.Size(224, 258);
             this.TB3.TabIndex = 8;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(432, 325);
             this.Controls.Add(this.TB3);
             this.Controls.Add(this.B1);
@@ -120,7 +126,11 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.TB1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de persona";
             this.ResumeLayout(false);
             this.PerformLayout();
